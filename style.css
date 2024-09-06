@@ -1,10 +1,24 @@
 *{
     margin: 0;
     padding: 0;
-
 }
-body{
-    padding-top: 80px;
+    
+
+    
+    
+.navbar{
+    top: 0;
+    z-index: 9999;
+    position: fixed;
+    width:100%;
+    background-color: white;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 2px rgb(0, 0, 0.01);
 }
 .left{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -12,49 +26,89 @@ body{
     font-weight: 300
 
 }
-nav{
-    top: 0;
-    z-index: 9999;
-    position: fixed;
-    width: 95%;
-    background-color: white;
-    box-sizing: border-box;
-    color: aquamarine;
-    color: black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 80px;
-    margin: 0 50px 0 50px;
-    border-radius: 40px;
-    box-shadow: 0px 0px 0.9px rgb(0, 0, 0.01);
-
-}
-nav ul{
+.nav-menu{
     font-size: 1.3rem;
     display: flex;
     justify-content: center;
 }
-nav ul li{
+.nav-item{
     list-style: none;
     margin: 0 20px;
 
 }
-nav ul li a{
+.nav-link{
     text-decoration: none;
     color: green;
 }
-nav ul li a:hover{
+.nav-link:hover{
     text-decoration: none;
     color: rgb(210, 232, 35);
     font-size: 1.32rem;
 }
+.hamburger {
+    display: none;
+}
 
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    /* background-color: #101010; */
+    background-color: green;
+}
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        /* background-color: #fff; */
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        border-radius: 40px;
+        box-shadow:0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link {
+        color: green
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
 .left{
     font-size: 1.5rem;
 }
 .firstsection{
-    padding: 50px 0 400px 0;
+    padding: 200px 0 400px 0;
     background-color: rgb(1, 51, 1);
     color:aliceblue;
     display: flex;
